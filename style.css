@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+/*body 초기화*/
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", serif;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;  
+}
+
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  background: linear-gradient(90deg, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#main-menu > li {
+  float: left;
+  position: relative;
+}
+
+#main-menu > li > a {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.85);
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  display: block;
+  padding: 14px 36px;
+  border-right: 1px solid rgba(0,0,0,0.15);
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+}
+
+#main-menu > li:nth-child(1) > a {
+  border-left: 1px solid rgba(0,0,0,0.15);
+}
+
+#sub-menu {
+  position: absolute;
+  background: #182952;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.15s ease-in;
+}
+
+#sub-menu > li {
+  padding: 16px 28px;
+  border-bottom: 1px solid rgba(0,0,0,0.15);
+}
+
+#sub-menu > li >  a {
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+}
+
+#main-menu > li:hover #sub-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+#sub-menu > li >  a:hover {
+ text-decoration: underline;
+}
+
+section {
+    height: 600px;
+    background: url("https://www.starbucks.co.kr/common/img/main/fav_prod_bg_new.jpg") fixed;
+    background-size: 100% 100%;
+    background-position: center;
+  }
+
+.photo {
+    position: absolute;
+    top:300px;
+    right:400px;
+}
+
+h1 {
+    font-size: 3rem;
+    width:250px;
+    color:white;
+    font-family: sans-serif;
+    position: absolute;
+    top: 300px;
+    left: 400px;
+    line-height: 110%;
+    animation: slide 1s ease-out;
+}
+
+@keyframes slide {
+    from{
+        left: -100px;
+        opacity: 0;
+    }
+    to {
+        left: 400px;
+        opacity: 1;
+    }
+}
+
+@keyframes disappear {
+    from{
+        left: 400px;
+        opacity: 1;
+
+    }
+    to {
+        left: -100px;
+        opacity: 0;
+    }
+}
